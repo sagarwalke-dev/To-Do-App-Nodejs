@@ -4,7 +4,7 @@ const Task = require('./taskSchema');
 
 //connection url
 // const URL = 'mongodb://localhost:27017/TODO';
-const URL='mongodb+srv://mongocloud:sagar7030@cluster0.3wkxm.mongodb.net/TODO?retryWrites=true&w=majority'
+const URL='mongodb+srv://mongocloud:<password>@cluster0.3wkxm.mongodb.net/<DB Name>?retryWrites=true&w=majority'
 //db connection
 mongoose.connect(URL);
 //get connection object
