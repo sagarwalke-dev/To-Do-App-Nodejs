@@ -23,7 +23,7 @@ app.set('views',path.join(__dirname,'../template/views'));
 app.post('/addtask',function(req,res){
     // d=new Date(req.body.date);
     // console.log(d.toLocaleTimeString('it-IT'));
-    var result=task.addTask(req.body.id,req.body.task,req.body.desc,req.body.date);
+    var result=task.addTask(req.body.id,req.body.task,req.body.type,req.body.desc,req.body.date);
     result.then(data=>{
         if(data!=null){
         console.log('Task Added...');

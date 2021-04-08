@@ -3,8 +3,8 @@ const mongoose = require('mongoose');
 const Task = require('./taskSchema');
 
 //connection url
-// const URL = 'mongodb://localhost:27017/TODO';
-const URL='mongodb+srv://mongocloud:<password>@cluster0.3wkxm.mongodb.net/<DB Name>?retryWrites=true&w=majority'
+ const URL = 'mongodb://localhost:27017/TODO';
+//const URL='mongodb+srv://mongocloud:<password>@cluster0.3wkxm.mongodb.net/<DB Name>?retryWrites=true&w=majority'
 //db connection
 mongoose.connect(URL);
 //get connection object
@@ -15,9 +15,9 @@ conn.on('open', () => {
 });
 
 //add task to db
-let addTask = async (id, name, desc, date) => {
+let addTask = async (id, name,type, desc, date) => {
     try {
-        let task = new Task({ taskId: id, taskName: name, taskDesc: desc, taskDate: date});
+        let task = new Task({ taskId: id, taskName: name,taskType: type, taskDesc: desc, taskDate: date});
         return await task.save();
     }
     catch (error) {
